@@ -2,33 +2,30 @@ package pl.simplecoding.kug.dsl
 
 fun main(args: Array<String>) {
   val tournament = Tournament(
-      name = "KUG Tournament",
-      battles = listOf(
-          Battle(
-              Hero(
-                  name = "John",
-                  profession = Profession.KNIGHT,
-                  level = 20,
-                  equipment = listOf(
-                      Item("Sword", 20),
-                      Item("Shield", 5),
-                      Item("Nike Air Max", 40)
-                  ),
-                  spells = listOf(
-                      Spell("Hohoho", 4)
-                  )
+      "KUG Tournament",
+      battles(
+          Hero(
+              name = "John",
+              profession = Profession.KNIGHT,
+              level = 20,
+              equipment = items(
+                  "Sword" power 20,
+                  "Shield" power 5,
+                  "Nike Air Max" power 40
               ),
-              Hero(
-                  name = "Mike",
-                  profession = Profession.WIZARD,
-                  level = 25,
-                  equipment = listOf(
-                      Item("Rod", 15)
-                  ),
-                  spells = listOf(
-                      Spell("Vingardium Leviosa", 20),
-                      Spell("Not Found", 40)
-                  )
+              spells = spells(
+                  "Hohoho" spellPower 4
+              )
+          ) versus Hero(
+              name = "Mike",
+              profession = Profession.WIZARD,
+              level = 25,
+              equipment = items(
+                  "Rod" power 15
+              ),
+              spells = spells(
+                  "Vingardium Leviosa" spellPower 20,
+                  "Not Found" spellPower 40
               )
           )
       )
